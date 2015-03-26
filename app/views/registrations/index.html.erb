@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Matricua</h1>
+
+<table>
+  <thead>
+    <tr>
+      <tr>  Nivel  </tr> 
+            <tr>  Nombre  </tr> 
+                  
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registrations.each do |registration| %>
+      <tr>
+        <td><%= registration.level.name %></td>
+        <td><%=  registration.student.name %></td>
+        <td><%= link_to 'Show', registration %></td>
+        <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
+        <td><%= link_to 'Destroy', registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to ' Matricula Reingreso', new_registration_path %>
+<br>
+<%= link_to ' Matricula Primer Ingreso', new_student_path %>
+

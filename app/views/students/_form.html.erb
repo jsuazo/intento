@@ -1,0 +1,138 @@
+
+
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Informacion Personal</h3>
+
+    <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :estado_civil %><br />
+    <select :estado_civil>
+    <option >Soltero</option>
+    <option >Casado</option>
+  </select>
+
+  </p>
+  <p>
+    <%= f.label :fecha_nacimiento %><br />
+    <%= f.date_select :fecha_nacimiento %>
+  </p>
+  <p>
+    <%= f.label :edad %><br />
+    <%= f.text_field :edad %>
+  </p>
+  <p>
+    <%= f.label :genero %><br />
+    <select :genero>
+    <option >Femenino</option>
+    <option >Masculino</option>
+    </select>
+    </p>
+
+    <p>
+    <%= f.label :direccion %><br />
+    <%= f.text_area :direccion %>
+  </p>
+
+  <p>
+    <%= f.label :telefono %><br />
+    <%= f.text_field :telefono %>
+  </p>
+  <p>
+    <%= f.label :ocupacion_laboral %><br />
+    <%= f.text_field :ocupacion_laboral %>
+  </p>
+
+  <h3>Informacion Academica </h3>
+   <p>
+    <%= f.label :primaria %><br />
+    <%= f.check_box("primaria") %>
+  </p>
+  <p>
+    <%= f.label :secundaria %><br />
+    <%= f.check_box("secundaria") %>
+  </p>
+  <p>
+    <%= f.label :superior %><br />
+    <%= f.check_box("superior") %>
+  </p>
+  <p>
+    <%= f.label :año_finalizacion_Estudios %><br />
+    <%= f.text_field :finalizacion_estudios %>
+  </p>
+
+  <h3>Informacion Eclesiastica</h3>
+  <p>
+    <%= f.label :condicion %><br />
+    <select :condicion>
+    <option >Miembro</option>
+    <option >Ministro</option>
+    <option >Inactivo</option>
+    </select>
+    </p>
+
+      <p>
+    <%= f.label :bautizo_agua %><br />
+    <%= f.check_box("bautizo_agua") %>
+  </p>
+
+    <p>
+    <%= f.label :bautizo_espiritu %><br />
+    <%= f.check_box("bautizo_espiritu") %>
+  </p>
+
+    <p>
+    <%= f.label :retiro %><br />
+    <%= f.check_box("retiro") %>
+  </p>
+
+  <p>
+    <%= f.label :tiempo_iglesia %><br />
+    <%= f.text_field :tiempo_iglesia %>
+  </p>
+
+  <p>
+    <%= f.label :lider_celula %><br />
+    <%= f.text_field :lider_celula %>
+  </p>
+
+  <p>
+    <%= f.label :tiempo_celula %><br />
+    <%= f.text_field :tiempo_celula %>
+  </p>
+
+  <p>
+    <%= f.label :ministerio %><br />
+    <%= f.text_field :ministerio %>
+  </p>
+
+  <p>
+    <%= f.label :Tiempo_ministerio %><br />
+    <%= f.text_field :Tiempo_ministerio %>
+  </p>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+  

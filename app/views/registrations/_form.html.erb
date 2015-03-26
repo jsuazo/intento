@@ -1,0 +1,33 @@
+<%= form_for(@registration) do |f| %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+    <%= f.label :level_id %><br>
+    <select name="registration[level_id]">
+      <% Level.all.each do |l| %>
+        <option value="<%= l.id %>"><%= l.name %></option>
+      <% end %>
+    </select>
+    <div class="field">
+    <%= f.label :student_id %><br>
+    <select name="registration[student_id]">
+      <% Student.all.each do |s| %>
+        <option value="<%= s.id %>"><%= s.name %></option>
+      <% end %>
+    </select>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
